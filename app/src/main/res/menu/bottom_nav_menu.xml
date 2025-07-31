@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/nav_analytics"
+        android:id="@+id/analyticsFragment"
         android:icon="@drawable/ic_analytics"
         android:title="Analytics" />
     <item
-        android:id="@+id/nav_exchange"
+        android:id="@+id/exchangeFragment"
         android:icon="@drawable/ic_exchange"
         android:title="Exchange" />
     <item
-        android:id="@+id/nav_record"
+        android:id="@+id/recordFragment"
         android:icon="@drawable/ic_record"
         android:title="Record" />
     <item
-        android:id="@+id/nav_wallet"
+        android:id="@+id/walletFragment"
         android:icon="@drawable/ic_wallet"
         android:title="Wallet" />
 </menu>
