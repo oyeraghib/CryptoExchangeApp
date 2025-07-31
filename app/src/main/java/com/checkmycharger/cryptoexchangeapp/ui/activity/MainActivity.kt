@@ -1,8 +1,9 @@
-package com.checkmycharger.cryptoexchangeapp
+package com.checkmycharger.cryptoexchangeapp.ui.activity
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import com.checkmycharger.cryptoexchangeapp.R
 import com.checkmycharger.cryptoexchangeapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
