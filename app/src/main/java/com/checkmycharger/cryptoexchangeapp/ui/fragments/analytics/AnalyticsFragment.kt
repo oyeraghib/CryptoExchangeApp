@@ -1,4 +1,4 @@
-package com.checkmycharger.cryptoexchangeapp.ui.fragments
+package com.checkmycharger.cryptoexchangeapp.ui.fragments.analytics
 
 import android.graphics.Color
 import android.os.Bundle
@@ -8,9 +8,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.checkmycharger.cryptoexchangeapp.databinding.FragmentAnalyticsBinding
 import com.github.mikephil.charting.charts.LineChart
+import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
-import com.github.mikephil.charting.data.Entry
 
 class AnalyticsFragment : Fragment() {
 
