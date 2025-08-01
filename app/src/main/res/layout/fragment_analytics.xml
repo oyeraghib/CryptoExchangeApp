@@ -54,7 +54,7 @@
 
                         <ImageButton
                             android:id="@+id/btnMoney"
-                            android:layout_width="40dp"
+                            android:layout_width="56dp"
                             android:layout_height="40dp"
                             android:src="@drawable/ic_money"
                             android:background="@drawable/bg_selector_unselected"
@@ -63,7 +63,7 @@
 
                         <ImageButton
                             android:id="@+id/btnBTC"
-                            android:layout_width="40dp"
+                            android:layout_width="56dp"
                             android:layout_height="40dp"
                             android:layout_marginStart="8dp"
                             android:src="@drawable/ic_btc"
