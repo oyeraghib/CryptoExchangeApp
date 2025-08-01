@@ -46,12 +46,13 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/font_giest_mono_regular"/>
 
-                    <LinearLayout
-                        android:id="@+id/selectorLayout"
-                        android:orientation="horizontal"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        >
+                        <LinearLayout
+                            android:id="@+id/selectorLayout"
+                            android:orientation="horizontal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/selector_container"
+                            >
 
                         <ImageButton
                             android:id="@+id/btnMoney"
