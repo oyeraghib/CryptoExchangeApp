@@ -14,7 +14,11 @@
         android:id="@+id/exchangeFragment"
         android:name="com.cryptoexchange.app.ui.fragments.exchange.ExchangeFragment"
         android:label="fragment_exchange"
-        tools:layout="@layout/fragment_exchange" />
+        tools:layout="@layout/fragment_exchange" >
+        <action
+            android:id="@+id/action_exchangeFragment_to_exchangeCoinFragment"
+            app:destination="@id/exchangeCoinFragment" />
+    </fragment>
     <fragment
         android:id="@+id/recordFragment"
         android:name="com.cryptoexchange.app.ui.fragments.RecordFragment"
@@ -25,4 +29,8 @@
         android:name="com.cryptoexchange.app.ui.fragments.WalletFragment"
         android:label="fragment_wallet"
         tools:layout="@layout/fragment_wallet" />
+    <fragment
+        android:id="@+id/exchangeCoinFragment"
+        android:name="com.cryptoexchange.app.ui.fragments.exchange.ExchangeCoinFragment"
+        android:label="ExchangeCoinFragment" />
 </navigation>

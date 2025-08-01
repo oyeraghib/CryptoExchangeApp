@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.cryptoexchange.app.R
 import com.cryptoexchange.app.data.RecentTransactionCard
@@ -34,6 +35,13 @@ class ExchangeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         setupRecentTransactions()
+        setupOnClickListeners()
+    }
+
+    private fun setupOnClickListeners() {
+        binding.btnExchange.setOnClickListener {
+            findNavController().navigate(R.id.action_exchangeFragment_to_exchangeCoinFragment)
+        }
     }
 
     private fun setupRecentTransactions() {
