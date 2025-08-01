@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.cryptoexchange.app.R
@@ -20,6 +21,8 @@ class AnalyticsFragment : Fragment() {
 
     private var _binding: FragmentAnalyticsBinding? = null
     private val binding get() = _binding!!
+
+    private var selectedType: String = "money"
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -45,7 +48,51 @@ class AnalyticsFragment : Fragment() {
         setupAssetRecyclerView()
         setupRecentTransactions()
 
+        //on click listeners
+        setupOnClickListeners()
+
+        // Set default to "money"
+        selectButton(binding.btnMoney, listOf(binding.btnBTC))
+        selectedType = "money"
+
     }
+
+    private fun setupOnClickListeners() {
+        binding.btnBTC.setOnClickListener {
+            if (selectedType != "btc") {
+                selectButton(binding.btnBTC, listOf(binding.btnMoney))
+                selectedType = "btc"
+                handleSelectionChange(selectedType)
+            }
+        }
+
+        binding.btnMoney.setOnClickListener {
+            if (selectedType != "money") {
+                selectButton(binding.btnMoney, listOf(binding.btnBTC))
+                selectedType = "money"
+                handleSelectionChange(selectedType)
+            }
+        }
+    }
+
+    private fun handleSelectionChange(selection: String) {
+        when (selection) {
+            "money" -> {
+                binding.tvValue.text = "₹2,37,402.09"
+            }
+            "btc" -> {
+                binding.tvValue.text = "0.0791 BTC"
+            }
+        }
+    }
+
+    private fun selectButton(selected: ImageButton, others: List<ImageButton>) {
+        selected.setBackgroundResource(R.drawable.bg_selector_selected)
+        others.forEach {
+            it.setBackgroundResource(R.drawable.bg_selector_unselected)
+        }
+    }
+
 
     private fun setupLineChart(chart: LineChart) {
         val entries = listOf(

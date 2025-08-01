@@ -45,28 +45,38 @@
                         android:fontFamily="@font/font_giest_mono_regular"/>
 
                     <LinearLayout
+                        android:id="@+id/selectorLayout"
                         android:orientation="horizontal"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:layout_marginTop="8dp">
 
                         <ImageButton
+                            android:id="@+id/btnMoney"
                             android:layout_width="40dp"
                             android:layout_height="40dp"
                             android:src="@drawable/ic_money"
-                            android:background="@null"
+                            android:background="@drawable/bg_selector_unselected"
+                            android:scaleType="centerInside"
                             app:tint="@android:color/white" />
 
                         <ImageButton
+                            android:id="@+id/btnBTC"
                             android:layout_width="40dp"
                             android:layout_height="40dp"
+                            android:layout_marginStart="8dp"
                             android:src="@drawable/ic_btc"
-                            android:background="@null"
+                            android:background="@drawable/bg_selector_unselected"
+                            android:scaleType="centerInside"
                             app:tint="@android:color/white" />
                     </LinearLayout>
+
 
                 </LinearLayout>
 
                 <TextView
+                    android:id="@+id/tvValue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="₹2,37,402.09"
