@@ -41,7 +41,8 @@
                         android:textSize="14sp"
                         android:layout_weight="1"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/font_giest_mono_regular"/>
 
                     <LinearLayout
                         android:orientation="horizontal"
@@ -68,11 +69,12 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="₹1,57,342.05"
+                    android:text="₹2,37,402.09"
                     android:textColor="@android:color/white"
                     android:textSize="28sp"
                     android:textStyle="bold"
-                    android:layout_marginTop="16dp"/>
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/font_inter_medium"/>
 
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
