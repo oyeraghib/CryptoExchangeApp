@@ -7,22 +7,22 @@
 
     <fragment
         android:id="@+id/analyticsFragment"
-        android:name="com.checkmycharger.cryptoexchangeapp.ui.fragments.analytics.AnalyticsFragment"
+        android:name="com.cryptoexchange.app.ui.fragments.analytics.AnalyticsFragment"
         android:label="fragment_analytics"
         tools:layout="@layout/fragment_analytics" />
     <fragment
         android:id="@+id/exchangeFragment"
-        android:name="com.checkmycharger.cryptoexchangeapp.ui.fragments.exchange.ExchangeFragment"
+        android:name="com.cryptoexchange.app.ui.fragments.exchange.ExchangeFragment"
         android:label="fragment_exchange"
         tools:layout="@layout/fragment_exchange" />
     <fragment
         android:id="@+id/recordFragment"
-        android:name="com.checkmycharger.cryptoexchangeapp.ui.fragments.RecordFragment"
+        android:name="com.cryptoexchange.app.ui.fragments.RecordFragment"
         android:label="fragment_record"
         tools:layout="@layout/fragment_record" />
     <fragment
         android:id="@+id/walletFragment"
-        android:name="com.checkmycharger.cryptoexchangeapp.ui.fragments.WalletFragment"
+        android:name="com.cryptoexchange.app.ui.fragments.WalletFragment"
         android:label="fragment_wallet"
         tools:layout="@layout/fragment_wallet" />
 </navigation>

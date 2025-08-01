@@ -1,15 +1,15 @@
-package com.checkmycharger.cryptoexchangeapp.ui.fragments.exchange
+package com.cryptoexchange.app.ui.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.checkmycharger.cryptoexchangeapp.databinding.FragmentExchangeCoinBinding
+import com.cryptoexchange.app.databinding.FragmentWalletBinding
 
-class ExchangeCoinFragment : Fragment() {
+class WalletFragment : Fragment() {
 
-    private var _binding: FragmentExchangeCoinBinding? = null
+    private var _binding: FragmentWalletBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -17,7 +17,7 @@ class ExchangeCoinFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        _binding = FragmentExchangeCoinBinding.inflate(inflater, container, false)
+        _binding = FragmentWalletBinding.inflate(inflater, container, false)
         return binding.root
     }
 

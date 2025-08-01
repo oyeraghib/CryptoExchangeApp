@@ -1,11 +1,11 @@
-package com.checkmycharger.cryptoexchangeapp.ui.fragments
+package com.cryptoexchange.app.ui.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.checkmycharger.cryptoexchangeapp.databinding.FragmentRecordBinding
+import com.cryptoexchange.app.databinding.FragmentRecordBinding
 
 class RecordFragment : Fragment() {
 

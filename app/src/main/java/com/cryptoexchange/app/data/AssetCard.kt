@@ -1,4 +1,4 @@
-package com.checkmycharger.cryptoexchangeapp.data
+package com.cryptoexchange.app.data
 
 data class AssetCard(
     val imageResId: Int,

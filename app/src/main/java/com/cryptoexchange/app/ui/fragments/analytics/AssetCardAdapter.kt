@@ -1,4 +1,4 @@
-package com.checkmycharger.cryptoexchangeapp.ui.fragments.analytics
+package com.cryptoexchange.app.ui.fragments.analytics
 
 import android.graphics.Color
 import android.view.LayoutInflater
@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.checkmycharger.cryptoexchangeapp.R
-import com.checkmycharger.cryptoexchangeapp.data.AssetCard
+import com.cryptoexchange.app.R
+import com.cryptoexchange.app.data.AssetCard
 
 class AssetCardAdapter(private val assets: List<AssetCard>) :
     RecyclerView.Adapter<AssetCardAdapter.AssetViewHolder>() {

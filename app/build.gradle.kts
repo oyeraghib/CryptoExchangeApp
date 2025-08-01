@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.checkmycharger.cryptoexchangeapp"
+    namespace = "com.cryptoexchange.app"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.checkmycharger.cryptoexchangeapp"
+        applicationId = "com.cryptoexchange.app"
         minSdk = 24
         targetSdk = 36
         versionCode = 1

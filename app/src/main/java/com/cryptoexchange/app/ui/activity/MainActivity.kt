@@ -1,4 +1,4 @@
-package com.checkmycharger.cryptoexchangeapp.ui.activity
+package com.cryptoexchange.app.ui.activity
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -6,8 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
-import com.checkmycharger.cryptoexchangeapp.R
-import com.checkmycharger.cryptoexchangeapp.databinding.ActivityMainBinding
+import com.cryptoexchange.app.R
+import com.cryptoexchange.app.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {

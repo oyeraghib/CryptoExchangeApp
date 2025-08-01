@@ -1,4 +1,4 @@
-package com.checkmycharger.cryptoexchangeapp.ui.fragments.exchange
+package com.cryptoexchange.app.ui.fragments.exchange
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,10 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.checkmycharger.cryptoexchangeapp.R
-import com.checkmycharger.cryptoexchangeapp.data.RecentTransactionCard
-import com.checkmycharger.cryptoexchangeapp.databinding.FragmentExchangeBinding
-import com.checkmycharger.cryptoexchangeapp.ui.fragments.analytics.RecentTransactionAdapter
+import com.cryptoexchange.app.R
+import com.cryptoexchange.app.data.RecentTransactionCard
+import com.cryptoexchange.app.databinding.FragmentExchangeBinding
+import com.cryptoexchange.app.ui.fragments.analytics.RecentTransactionAdapter
 
 class ExchangeFragment : Fragment() {
 
