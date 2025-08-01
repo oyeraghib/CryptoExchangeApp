@@ -12,7 +12,7 @@
         tools:layout="@layout/fragment_analytics" />
     <fragment
         android:id="@+id/exchangeFragment"
-        android:name="com.checkmycharger.cryptoexchangeapp.ui.fragments.ExchangeFragment"
+        android:name="com.checkmycharger.cryptoexchangeapp.ui.fragments.exchange.ExchangeFragment"
         android:label="fragment_exchange"
         tools:layout="@layout/fragment_exchange" />
     <fragment
