@@ -30,12 +30,14 @@
                 android:background="@drawable/bg_gradient_analytics_card">
 
                 <LinearLayout
-                    android:layout_marginTop="96dp"
+                    android:layout_marginTop="102dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:layout_gravity="center">
 
                     <TextView
+                        android:layout_gravity="center"
                         android:text="Portfolio Value"
                         android:textColor="@android:color/white"
                         android:textSize="14sp"
@@ -49,8 +51,7 @@
                         android:orientation="horizontal"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:layout_marginTop="8dp">
+                        >
 
                         <ImageButton
                             android:id="@+id/btnMoney"
