@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.checkmycharger.cryptoexchangeapp.R
 import com.checkmycharger.cryptoexchangeapp.data.AssetCard
+import com.checkmycharger.cryptoexchangeapp.data.RecentTransactionCard
 import com.checkmycharger.cryptoexchangeapp.databinding.FragmentAnalyticsBinding
 import com.github.mikephil.charting.charts.LineChart
 import com.github.mikephil.charting.data.Entry
@@ -37,9 +38,12 @@ class AnalyticsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        //setup graph
         setupLineChart(binding.portfolioLineChart)
 
+        //setup recycler views
         setupAssetRecyclerView()
+        setupRecentTransactions()
 
     }
 
@@ -89,6 +93,21 @@ class AnalyticsFragment : Fragment() {
         binding.rvAssetCards.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         binding.rvAssetCards.adapter = adapter
+    }
+
+    private fun setupRecentTransactions() {
+        val mockTransactions = listOf(
+            RecentTransactionCard(R.drawable.ic_arrow_up, "Sent", "Jul 25, 2025", "BTC", "0.00045"),
+            RecentTransactionCard(R.drawable.ic_arrow_down, "Received", "Jul 24, 2025", "ETH", "0.224"),
+            RecentTransactionCard(R.drawable.ic_arrow_down, "Received", "Jul 23, 2025", "DOGE", "120.00"),
+            RecentTransactionCard(R.drawable.ic_arrow_up, "Sent", "Jul 21, 2025", "SOL", "0.5001"),
+            RecentTransactionCard(R.drawable.ic_arrow_up, "Sent", "Jul 20, 2025", "BTC", "0.0012")
+        )
+
+        val adapter = RecentTransactionAdapter(mockTransactions)
+
+        binding.rvRecentTransactions.layoutManager = LinearLayoutManager(requireContext())
+        binding.rvRecentTransactions.adapter = adapter
     }
 
 
