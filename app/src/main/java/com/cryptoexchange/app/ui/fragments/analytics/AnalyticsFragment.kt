@@ -1,11 +1,13 @@
 package com.cryptoexchange.app.ui.fragments.analytics
 
+import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.cryptoexchange.app.R
@@ -42,7 +44,7 @@ class AnalyticsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         //setup graph
-        setupLineChart(binding.portfolioLineChart)
+        setupLineChart(binding.portfolioLineChart, requireContext())
 
         //setup recycler views
         setupAssetRecyclerView()
@@ -94,7 +96,7 @@ class AnalyticsFragment : Fragment() {
     }
 
 
-    private fun setupLineChart(chart: LineChart) {
+    private fun setupLineChart(chart: LineChart, context: Context) {
         val entries = listOf(
             Entry(0f, 120f),
             Entry(1f, 130f),
@@ -106,11 +108,14 @@ class AnalyticsFragment : Fragment() {
         )
 
         val dataSet = LineDataSet(entries, "Portfolio").apply {
-            color = Color.GREEN
+            color = Color.parseColor("#00FF99")  // Mint green
             setDrawCircles(false)
             setDrawValues(false)
             lineWidth = 2f
             mode = LineDataSet.Mode.CUBIC_BEZIER
+
+            setDrawFilled(true)
+            fillDrawable = ContextCompat.getDrawable(context, R.drawable.chart_gradient)
         }
 
         chart.data = LineData(dataSet)
@@ -120,10 +125,16 @@ class AnalyticsFragment : Fragment() {
         chart.setScaleEnabled(false)
         chart.axisRight.isEnabled = false
         chart.xAxis.isEnabled = false
-        chart.axisLeft.textColor = Color.WHITE
-        chart.axisLeft.gridColor = Color.DKGRAY
-        chart.setBackgroundColor(Color.TRANSPARENT)
 
+        chart.axisLeft.apply {
+//            textColor = Color.WHITE
+//            gridColor = Color.TRANSPARENT
+//            setDrawAxisLine(false)
+//            setDrawGridLines(false)
+            isEnabled = false
+        }
+
+        chart.setBackgroundColor(Color.TRANSPARENT)
         chart.invalidate()
     }
 
