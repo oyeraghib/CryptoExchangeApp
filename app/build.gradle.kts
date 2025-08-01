@@ -62,4 +62,6 @@ dependencies {
     implementation(libs.timber)
     //LiveData
     implementation(libs.androidx.lifecycle.livedata.ktx)
+    //MPAndroidChart
+    implementation(libs.mpandroidchart)
 }
