@@ -108,6 +108,8 @@ class AnalyticsFragment : Fragment() {
 
         binding.rvRecentTransactions.layoutManager = LinearLayoutManager(requireContext())
         binding.rvRecentTransactions.adapter = adapter
+        binding.rvRecentTransactions.setHasFixedSize(false)
+
     }
 
 
