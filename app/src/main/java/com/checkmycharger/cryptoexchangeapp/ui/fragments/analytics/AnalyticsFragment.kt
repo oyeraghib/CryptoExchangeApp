@@ -6,6 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.checkmycharger.cryptoexchangeapp.R
+import com.checkmycharger.cryptoexchangeapp.data.AssetCard
 import com.checkmycharger.cryptoexchangeapp.databinding.FragmentAnalyticsBinding
 import com.github.mikephil.charting.charts.LineChart
 import com.github.mikephil.charting.data.Entry
@@ -35,6 +38,8 @@ class AnalyticsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         setupLineChart(binding.portfolioLineChart)
+
+        setupAssetRecyclerView()
 
     }
 
@@ -70,5 +75,21 @@ class AnalyticsFragment : Fragment() {
 
         chart.invalidate()
     }
+
+    private fun setupAssetRecyclerView() {
+        val mockAssets = listOf(
+            AssetCard(R.drawable.ic_btc_png, "Bitcoin (BTC)", "₹42,000", "+5.2%", true),
+            AssetCard(R.drawable.ic_eth_png, "Ethereum (ETH)", "₹2,800", "-1.3%", false),
+            AssetCard(R.drawable.ic_solana_png, "Solana (SOL)", "₹1,050", "+3.8%", true),
+            AssetCard(R.drawable.ic_doge_png, "Dogecoin (DOGE)", "₹12.40", "-0.9%", false)
+        )
+
+        val adapter = AssetCardAdapter(mockAssets)
+
+        binding.rvAssetCards.layoutManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        binding.rvAssetCards.adapter = adapter
+    }
+
 
 }
