@@ -7,4 +7,6 @@
     <color name="chip_text_color">#E1E1E1CC</color>
     <color name="chip_unselected_bg">#00000000</color>
     <color name="toggle_bg">#76212133</color>
+    <color name="exchange_currency_bg_color">#2C3FC7</color>
+    <color name="exchange_increase_green">#11C17B</color>
 </resources>
