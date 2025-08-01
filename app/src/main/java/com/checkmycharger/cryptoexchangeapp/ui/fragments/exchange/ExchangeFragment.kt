@@ -1,4 +1,4 @@
-package com.checkmycharger.cryptoexchangeapp.ui.fragments
+package com.checkmycharger.cryptoexchangeapp.ui.fragments.exchange
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -39,19 +39,55 @@ class ExchangeFragment : Fragment() {
     private fun setupRecentTransactions() {
         val mockTransactions = listOf(
             RecentTransactionCard(R.drawable.ic_arrow_up, "Sent", "Jul 25, 2025", "BTC", "0.00045"),
-            RecentTransactionCard(R.drawable.ic_arrow_down, "Received", "Jul 24, 2025", "ETH", "0.224"),
-            RecentTransactionCard(R.drawable.ic_arrow_down, "Received", "Jul 23, 2025", "DOGE", "120.00"),
+            RecentTransactionCard(
+                R.drawable.ic_arrow_down,
+                "Received",
+                "Jul 24, 2025",
+                "ETH",
+                "0.224"
+            ),
+            RecentTransactionCard(
+                R.drawable.ic_arrow_down,
+                "Received",
+                "Jul 23, 2025",
+                "DOGE",
+                "120.00"
+            ),
             RecentTransactionCard(R.drawable.ic_arrow_up, "Sent", "Jul 21, 2025", "SOL", "0.5001"),
             RecentTransactionCard(R.drawable.ic_arrow_up, "Sent", "Jul 20, 2025", "BTC", "0.0012"),
             RecentTransactionCard(R.drawable.ic_arrow_up, "Sent", "Jul 25, 2025", "BTC", "0.00045"),
-            RecentTransactionCard(R.drawable.ic_arrow_down, "Received", "Jul 24, 2025", "ETH", "0.224"),
-            RecentTransactionCard(R.drawable.ic_arrow_down, "Received", "Jul 23, 2025", "DOGE", "120.00"),
+            RecentTransactionCard(
+                R.drawable.ic_arrow_down,
+                "Received",
+                "Jul 24, 2025",
+                "ETH",
+                "0.224"
+            ),
+            RecentTransactionCard(
+                R.drawable.ic_arrow_down,
+                "Received",
+                "Jul 23, 2025",
+                "DOGE",
+                "120.00"
+            ),
             RecentTransactionCard(R.drawable.ic_arrow_up, "Sent", "Jul 21, 2025", "SOL", "0.5001"),
             RecentTransactionCard(R.drawable.ic_arrow_up, "Sent", "Jul 20, 2025", "BTC", "0.0012"),
             RecentTransactionCard(R.drawable.ic_arrow_up, "Sent", "Jul 20, 2025", "BTC", "0.0012"),
             RecentTransactionCard(R.drawable.ic_arrow_up, "Sent", "Jul 25, 2025", "BTC", "0.00045"),
-            RecentTransactionCard(R.drawable.ic_arrow_down, "Received", "Jul 24, 2025", "ETH", "0.224"),
-            RecentTransactionCard(R.drawable.ic_arrow_down, "Received", "Jul 23, 2025", "DOGE", "120.00"),
+            RecentTransactionCard(
+                R.drawable.ic_arrow_down,
+                "Received",
+                "Jul 24, 2025",
+                "ETH",
+                "0.224"
+            ),
+            RecentTransactionCard(
+                R.drawable.ic_arrow_down,
+                "Received",
+                "Jul 23, 2025",
+                "DOGE",
+                "120.00"
+            ),
             RecentTransactionCard(R.drawable.ic_arrow_up, "Sent", "Jul 21, 2025", "SOL", "0.5001"),
             RecentTransactionCard(R.drawable.ic_arrow_up, "Sent", "Jul 20, 2025", "BTC", "0.0012")
         )
