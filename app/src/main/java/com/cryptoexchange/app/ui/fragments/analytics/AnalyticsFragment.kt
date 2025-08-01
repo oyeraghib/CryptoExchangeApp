@@ -163,11 +163,10 @@ class AnalyticsFragment : Fragment() {
         )
 
         val adapter = RecentTransactionAdapter(mockTransactions)
-        binding.rvRecentTransactions.layoutManager = object : LinearLayoutManager(requireContext()) {
-            override fun canScrollVertically(): Boolean = false
-        }
+        binding.rvRecentTransactions.layoutManager = LinearLayoutManager(requireContext())
         binding.rvRecentTransactions.adapter = adapter
         binding.rvRecentTransactions.setHasFixedSize(false)
+        binding.rvRecentTransactions.isNestedScrollingEnabled = false
 
     }
 
