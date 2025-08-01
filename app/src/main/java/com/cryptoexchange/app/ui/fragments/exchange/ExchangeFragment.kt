@@ -57,7 +57,7 @@ class ExchangeFragment : Fragment() {
             RecentTransactionCard(R.drawable.ic_arrow_up, "Sent", "Jul 20, 2025", "BTC", "0.0012")
         )
 
-        val adapter = RecentTransactionAdapter(mockTransactions)
+        val adapter = RecentTransactionAdapter(mockTransactions, true)
         binding.rvRecentTransactions.layoutManager = LinearLayoutManager(requireContext())
         binding.rvRecentTransactions.adapter = adapter
         binding.rvRecentTransactions.setHasFixedSize(false)

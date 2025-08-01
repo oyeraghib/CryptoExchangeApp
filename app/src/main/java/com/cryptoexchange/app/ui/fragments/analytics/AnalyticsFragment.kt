@@ -162,7 +162,7 @@ class AnalyticsFragment : Fragment() {
             RecentTransactionCard(R.drawable.ic_btc_png, "Sent", "Jul 20, 2025", "BTC", "0.0012")
         )
 
-        val adapter = RecentTransactionAdapter(mockTransactions)
+        val adapter = RecentTransactionAdapter(mockTransactions, false)
         binding.rvRecentTransactions.layoutManager = LinearLayoutManager(requireContext())
         binding.rvRecentTransactions.adapter = adapter
         binding.rvRecentTransactions.setHasFixedSize(false)

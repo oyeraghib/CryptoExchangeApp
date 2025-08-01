@@ -227,15 +227,18 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Transactions"
-                android:textColor="@android:color/white"
-                android:textSize="14sp" />
+                android:textColor="@android:color/darker_gray"
+                android:textSize="14sp"
+                android:fontFamily="@font/font_giest_mono_regular"/>
 
             <TextView
+                android:gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Last 4 days"
                 android:textColor="@android:color/darker_gray"
-                android:textSize="12sp" />
+                android:textSize="12sp"
+                android:fontFamily="@font/font_inter_medium"/>
         </LinearLayout>
 
         <!-- RecyclerView -->
@@ -243,6 +246,7 @@
             android:id="@+id/rvRecentTransactions"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:nestedScrollingEnabled="false"
             android:overScrollMode="never" />
     </LinearLayout>

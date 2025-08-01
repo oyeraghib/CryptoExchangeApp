@@ -9,4 +9,5 @@
     <color name="toggle_bg">#76212133</color>
     <color name="exchange_currency_bg_color">#2C3FC7</color>
     <color name="exchange_increase_green">#11C17B</color>
+    <color name="transaction_text_color">#FCFCFAA3</color>
 </resources>
