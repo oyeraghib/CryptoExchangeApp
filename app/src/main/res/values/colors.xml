@@ -3,5 +3,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="gray">#151515</color>
-    <color name="white_light">#6F6F6F</color>
+    <color name="gray_bg_color">#6F6F6F</color>
+    <color name="chip_text_color">#E1E1E1CC</color>
+    <color name="chip_unselected_bg">#00000000</color>
 </resources>

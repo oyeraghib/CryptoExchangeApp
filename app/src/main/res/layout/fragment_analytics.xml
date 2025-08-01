@@ -105,6 +105,8 @@
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/chip_text_color"
+                android:backgroundTint="@drawable/chip_bg"
                 android:text="1h" />
 
             <com.google.android.material.chip.Chip
@@ -112,6 +114,8 @@
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/chip_text_color"
+                android:backgroundTint="@drawable/chip_bg"
                 android:text="8h" />
 
             <com.google.android.material.chip.Chip
@@ -119,6 +123,8 @@
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/chip_text_color"
+                android:backgroundTint="@drawable/chip_bg"
                 android:text="1d" />
 
             <com.google.android.material.chip.Chip
@@ -126,6 +132,8 @@
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/chip_text_color"
+                android:backgroundTint="@drawable/chip_bg"
                 android:text="1w" />
 
             <com.google.android.material.chip.Chip
@@ -133,6 +141,8 @@
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/chip_text_color"
+                android:backgroundTint="@drawable/chip_bg"
                 android:text="1m" />
 
             <com.google.android.material.chip.Chip
@@ -140,6 +150,8 @@
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/chip_text_color"
+                android:backgroundTint="@drawable/chip_bg"
                 android:text="6m" />
 
             <com.google.android.material.chip.Chip
@@ -147,6 +159,8 @@
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/chip_text_color"
+                android:backgroundTint="@drawable/chip_bg"
                 android:text="1y" />
         </com.google.android.material.chip.ChipGroup>
 
