@@ -174,7 +174,8 @@
             android:textColor="@android:color/white"
             android:textSize="16sp"
             android:textStyle="bold"
-            android:layout_marginBottom="8dp" />
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/font_giest_mono_regular"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvRecentTransactions"
