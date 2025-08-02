@@ -41,6 +41,7 @@ class ExchangeCoinFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         setupCardCorners()
+        setupOnClickListeners()
         val topCard = binding.cardContainer.getChildAt(0)
         val bottomCard = binding.cardContainer.getChildAt(1)
 
@@ -50,6 +51,20 @@ class ExchangeCoinFragment : Fragment() {
         //initial value
         setCardData(topCardBinding, coinMap["ETH"]!!)
         setCardData(bottomCardBinding, coinMap["INR"]!!)
+    }
+
+    private fun setupOnClickListeners() {
+        binding.ivSwitchCoins.setOnClickListener {
+            val topCoin = topCardBinding.tvCoinNameSend.text.toString()
+            val bottomCoin = bottomCardBinding.tvCoinNameSend.text.toString()
+
+            val topCoinInfo = coinMap[topCoin]
+            val bottomCoinInfo = coinMap[bottomCoin]
+
+            topCoinInfo?.let { setCardData(topCardBinding, bottomCoinInfo!!) }
+            bottomCoinInfo?.let { setCardData(bottomCardBinding, topCoinInfo!!) }
+        }
+
     }
 
     /**
