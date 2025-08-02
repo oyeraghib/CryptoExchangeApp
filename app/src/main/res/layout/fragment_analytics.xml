@@ -166,12 +166,56 @@
                 android:text="1y" />
         </com.google.android.material.chip.ChipGroup>
 
-        <!-- Graph -->
-        <com.github.mikephil.charting.charts.LineChart
-            android:id="@+id/portfolio_line_chart"
+        <FrameLayout
+            android:id="@+id/chart_container"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:layout_marginBottom="16dp" />
+            android:layout_marginBottom="16dp">
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/portfolio_line_chart"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+            <View
+                android:id="@+id/chart_highlight_line"
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:background="#FFFFFF"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/chart_label_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:padding="4dp"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:id="@+id/tvDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20 Feb 2025"
+                    android:textSize="12sp"
+                    android:textColor="@color/gray_bg_color"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/font_inter_medium"
+                    android:gravity="center" />
+
+                <TextView
+                    android:id="@+id/tvPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="₹ 1,23,224"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/font_inter_medium"
+                    android:textColor="@android:color/white"
+                    android:gravity="center" />
+            </LinearLayout>
+
+        </FrameLayout>
+
 
         <!-- Horizontal asset list -->
         <androidx.recyclerview.widget.RecyclerView

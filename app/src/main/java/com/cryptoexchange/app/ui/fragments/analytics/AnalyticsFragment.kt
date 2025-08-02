@@ -13,11 +13,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.cryptoexchange.app.R
 import com.cryptoexchange.app.data.AssetCard
 import com.cryptoexchange.app.data.RecentTransactionCard
+import com.cryptoexchange.app.data.chipInfoList
 import com.cryptoexchange.app.databinding.FragmentAnalyticsBinding
 import com.github.mikephil.charting.charts.LineChart
 import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
+import com.google.android.material.chip.Chip
 
 class AnalyticsFragment : Fragment() {
 
@@ -75,6 +77,52 @@ class AnalyticsFragment : Fragment() {
                 handleSelectionChange(selectedType)
             }
         }
+
+        val labelContainer = binding.chartLabelContainer
+        val tvDate = binding.tvDate
+        val tvPrice = binding.tvPrice
+
+        binding.timeChipGroup.setOnCheckedChangeListener { group, checkedId ->
+            val chip = group.findViewById<Chip>(checkedId) ?: return@setOnCheckedChangeListener
+
+            val chipLocation = IntArray(2)
+            chip.getLocationOnScreen(chipLocation)
+
+            val chartLocation = IntArray(2)
+            binding.chartContainer.getLocationOnScreen(chartLocation)
+
+            val chipCenterX = chipLocation[0] + chip.width / 2
+            val relativeX = chipCenterX - chartLocation[0]
+
+            // Show vertical line
+            binding.chartHighlightLine.apply {
+                visibility = View.VISIBLE
+                translationX = relativeX.toFloat()
+            }
+
+            // Get chip-specific data
+            val chipInfo = chipInfoList.find { it.chipId == checkedId } ?: return@setOnCheckedChangeListener
+            tvDate.text = chipInfo.date
+            tvPrice.text = chipInfo.price
+            labelContainer.visibility = View.VISIBLE
+
+            labelContainer.post {
+                val labelWidth = labelContainer.width
+                val showRight = checkedId in listOf(R.id.chip1h, R.id.chip8h, R.id.chip1d)
+                val offset = 12
+
+                val labelX = if (showRight) {
+                    relativeX + offset
+                } else {
+                    relativeX - labelWidth - offset
+                }
+
+                labelContainer.translationX = labelX.toFloat()
+                labelContainer.translationY = 12f
+            }
+
+        }
+
     }
 
     private fun handleSelectionChange(selection: String) {
