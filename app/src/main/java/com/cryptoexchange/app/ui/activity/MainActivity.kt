@@ -27,6 +27,13 @@ class MainActivity : AppCompatActivity() {
             .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
 
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            when (destination.id) {
+                R.id.analyticsFragment -> binding.fab.show()
+                else -> binding.fab.hide()
+            }
+        }
+
         val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_nav)
 
         // Connect bottom nav with navigation controller
