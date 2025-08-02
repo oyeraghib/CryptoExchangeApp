@@ -36,7 +36,6 @@
     </LinearLayout>
 
     <ScrollView
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/black"
@@ -57,8 +56,8 @@
                     android:id="@+id/cardContainer"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:background="@android:color/transparent">
+                    android:background="@android:color/transparent"
+                    android:orientation="vertical">
 
                     <!-- Top Card -->
                     <include layout="@layout/layout_card_for_coin_exchange" />
@@ -72,7 +71,7 @@
                     android:layout_width="36dp"
                     android:layout_height="36dp"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="112dp"
+                    android:layout_marginTop="206dp"
                     android:background="@drawable/bg_button_circle"
                     android:src="@drawable/ic_switch" />
             </FrameLayout>
@@ -82,52 +81,121 @@
                 android:id="@+id/btnExchange"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
                 android:text="Exchange"
                 android:paddingVertical="16dp"
+                android:layout_marginBottom="18dp"
                 android:textColor="@android:color/white"
                 android:backgroundTint="#1E4DDB"
                 android:textStyle="bold" />
 
-            <!-- Details Below -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_marginTop="24dp">
 
-                <TextView
+                <!-- Rate Row -->
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Rate      1 ETH = ₹ 1,76,138.80"
-                    android:textColor="@android:color/white"
-                    android:textSize="14sp"
-                    android:layout_marginBottom="4dp" />
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="4dp">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Spread     0.2%"
-                    android:textColor="@android:color/white"
-                    android:textSize="14sp"
-                    android:layout_marginBottom="4dp" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Rate"
+                        android:textColor="@color/gray_bg_color"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/font_inter_medium"/>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Gas Fee     ₹ 422.73"
-                    android:textColor="@android:color/white"
-                    android:textSize="14sp"
-                    android:layout_marginBottom="8dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1 ETH = ₹ 1,94,228.20"
+                        android:textColor="@android:color/white"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/font_inter_medium"/>
+                </LinearLayout>
 
-                <TextView
+                <!-- Spread Row -->
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="You will receive     ₹ 1,75,716.07"
-                    android:textColor="@android:color/white"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="4dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Spread"
+                        android:textColor="@color/gray_bg_color"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/font_inter_medium"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0.45%"
+                        android:textColor="@android:color/white"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/font_inter_medium"/>
+                </LinearLayout>
+
+                <!-- Gas Fee Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Gas Fee"
+                        android:textColor="@color/gray_bg_color"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/font_inter_medium"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="₹ 193.43"
+                        android:textColor="@android:color/white"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/font_inter_medium"/>
+                </LinearLayout>
+
+                <!-- You will receive Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="You will receive"
+                        android:textColor="@color/gray_bg_color"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/font_inter_medium"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="₹ 1,88,320.07"
+                        android:textColor="@android:color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/font_inter_medium"/>
+                </LinearLayout>
             </LinearLayout>
+
 
         </LinearLayout>
     </ScrollView>
