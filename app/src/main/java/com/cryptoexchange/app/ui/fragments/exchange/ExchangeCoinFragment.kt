@@ -1,19 +1,27 @@
 package com.cryptoexchange.app.ui.fragments.exchange
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.cryptoexchange.app.R
+import com.cryptoexchange.app.data.CoinInfo
+import com.cryptoexchange.app.data.coinMap
 import com.cryptoexchange.app.databinding.FragmentExchangeCoinBinding
+import com.cryptoexchange.app.databinding.LayoutCardForCoinExchangeBinding
 
 class ExchangeCoinFragment : Fragment() {
 
     private var _binding: FragmentExchangeCoinBinding? = null
     private val binding get() = _binding!!
+
+    private lateinit var topCardBinding: LayoutCardForCoinExchangeBinding
+    private lateinit var bottomCardBinding: LayoutCardForCoinExchangeBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,6 +41,36 @@ class ExchangeCoinFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         setupCardCorners()
+        val topCard = binding.cardContainer.getChildAt(0)
+        val bottomCard = binding.cardContainer.getChildAt(1)
+
+        topCardBinding = LayoutCardForCoinExchangeBinding.bind(topCard)
+        bottomCardBinding = LayoutCardForCoinExchangeBinding.bind(bottomCard)
+
+        //initial value
+        setCardData(topCardBinding, coinMap["ETH"]!!)
+        setCardData(bottomCardBinding, coinMap["INR"]!!)
+    }
+
+    /**
+     * Helps setting up the card data
+     */
+    private fun setCardData(binding: LayoutCardForCoinExchangeBinding, coin: CoinInfo) {
+        binding.tvCoinNameSend.text = coin.name
+        binding.tvAmountSend.text = coin.amount
+        binding.tvBalanceSend.text = coin.balance
+
+        binding.ivCoinIconSend.setImageResource(coin.iconResId)
+
+        if (coin.name == "INR") {
+            binding.ivCoinIconSend.setBackgroundResource(R.drawable.bg_inr_circle)
+            binding.ivCoinIconSend.setPadding(9, 9, 9, 9)
+            binding.ivCoinIconSend.scaleType = ImageView.ScaleType.CENTER_INSIDE
+        } else {
+            binding.ivCoinIconSend.setBackgroundColor(Color.TRANSPARENT)
+            binding.ivCoinIconSend.setPadding(0, 0, 0, 0)
+            binding.ivCoinIconSend.scaleType = ImageView.ScaleType.FIT_CENTER
+        }
     }
 
     /**
