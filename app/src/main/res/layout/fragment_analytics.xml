@@ -176,6 +176,16 @@
                 android:id="@+id/portfolio_line_chart"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
+
+            <View
+                android:id="@+id/chart_highlight_dot"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:background="@drawable/white_circle"
+                android:visibility="gone"
+                android:layout_gravity="top"
+                android:translationY="0dp" />
+
             <View
                 android:id="@+id/chart_highlight_line"
                 android:layout_width="2dp"

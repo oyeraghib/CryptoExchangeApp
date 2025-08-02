@@ -113,6 +113,12 @@ class AnalyticsFragment : Fragment() {
             translationX = relativeX.toFloat()
         }
 
+        binding.chartHighlightDot.apply {
+            visibility = View.VISIBLE
+            translationX = relativeX - width / 2f
+        }
+
+
         // Get chip-specific data
         val chipInfo = chipInfoList.find { it.chipId == checkedId } ?: return
         binding.tvDate.text = chipInfo.date
