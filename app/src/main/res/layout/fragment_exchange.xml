@@ -211,7 +211,7 @@
                 android:layout_height="60dp"
                 android:layout_margin="8dp"
                 android:background="@drawable/bg_button_circle"
-                android:src="@drawable/ic_arrow_down"
+                android:src="@drawable/ic_full_arrow_down"
                 app:tint="@android:color/white" />
         </LinearLayout>
 
