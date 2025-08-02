@@ -1,5 +1,7 @@
 package com.cryptoexchange.app.ui.fragments.exchange
 
+import android.app.AlertDialog
+import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -41,7 +43,6 @@ class ExchangeCoinFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         setupCardCorners()
-        setupOnClickListeners()
         val topCard = binding.cardContainer.getChildAt(0)
         val bottomCard = binding.cardContainer.getChildAt(1)
 
@@ -51,6 +52,8 @@ class ExchangeCoinFragment : Fragment() {
         //initial value
         setCardData(topCardBinding, coinMap["ETH"]!!)
         setCardData(bottomCardBinding, coinMap["INR"]!!)
+
+        setupOnClickListeners()
     }
 
     private fun setupOnClickListeners() {
@@ -65,7 +68,34 @@ class ExchangeCoinFragment : Fragment() {
             bottomCoinInfo?.let { setCardData(bottomCardBinding, topCoinInfo!!) }
         }
 
+        topCardBinding.ivArrowDownSpinner.setOnClickListener {
+            showCoinPicker(it.context) { selectedCoin ->
+                coinMap[selectedCoin]?.let {
+                    setCardData(topCardBinding, it)
+                }
+            }
+        }
+
+        bottomCardBinding.ivArrowDownSpinner.setOnClickListener {
+            showCoinPicker(it.context) { selectedCoin ->
+                coinMap[selectedCoin]?.let {
+                    setCardData(bottomCardBinding, it)
+                }
+            }
+        }
     }
+
+    private fun showCoinPicker(context: Context, onSelected: (String) -> Unit) {
+        val coins = listOf("BTC", "ETH", "INR")
+
+        val builder = AlertDialog.Builder(context)
+        builder.setTitle("Choose Coin")
+        builder.setItems(coins.toTypedArray()) { _, which ->
+            onSelected(coins[which])
+        }
+        builder.show()
+    }
+
 
     /**
      * Helps setting up the card data
