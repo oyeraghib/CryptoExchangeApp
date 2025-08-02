@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.ViewTreeObserver
 import android.widget.ImageButton
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -59,6 +60,17 @@ class AnalyticsFragment : Fragment() {
         selectButton(binding.btnMoney, listOf(binding.btnBTC))
         selectedType = "money"
 
+        //set default graph value
+        val defaultChipId = R.id.chip1m
+        binding.timeChipGroup.check(defaultChipId)
+
+        binding.root.viewTreeObserver.addOnGlobalLayoutListener(object : ViewTreeObserver.OnGlobalLayoutListener {
+            override fun onGlobalLayout() {
+                binding.root.viewTreeObserver.removeOnGlobalLayoutListener(this)
+                highlightChip(defaultChipId)
+            }
+        })
+
     }
 
     private fun setupOnClickListeners() {
@@ -78,52 +90,51 @@ class AnalyticsFragment : Fragment() {
             }
         }
 
-        val labelContainer = binding.chartLabelContainer
-        val tvDate = binding.tvDate
-        val tvPrice = binding.tvPrice
-
         binding.timeChipGroup.setOnCheckedChangeListener { group, checkedId ->
-            val chip = group.findViewById<Chip>(checkedId) ?: return@setOnCheckedChangeListener
+            highlightChip(checkedId)
+        }
+    }
 
-            val chipLocation = IntArray(2)
-            chip.getLocationOnScreen(chipLocation)
+    private fun highlightChip(checkedId: Int) {
+        val chip = binding.timeChipGroup.findViewById<Chip>(checkedId) ?: return
 
-            val chartLocation = IntArray(2)
-            binding.chartContainer.getLocationOnScreen(chartLocation)
+        val chipLocation = IntArray(2)
+        chip.getLocationOnScreen(chipLocation)
 
-            val chipCenterX = chipLocation[0] + chip.width / 2
-            val relativeX = chipCenterX - chartLocation[0]
+        val chartLocation = IntArray(2)
+        binding.chartContainer.getLocationOnScreen(chartLocation)
 
-            // Show vertical line
-            binding.chartHighlightLine.apply {
-                visibility = View.VISIBLE
-                translationX = relativeX.toFloat()
-            }
+        val chipCenterX = chipLocation[0] + chip.width / 2
+        val relativeX = chipCenterX - chartLocation[0]
 
-            // Get chip-specific data
-            val chipInfo = chipInfoList.find { it.chipId == checkedId } ?: return@setOnCheckedChangeListener
-            tvDate.text = chipInfo.date
-            tvPrice.text = chipInfo.price
-            labelContainer.visibility = View.VISIBLE
-
-            labelContainer.post {
-                val labelWidth = labelContainer.width
-                val showRight = checkedId in listOf(R.id.chip1h, R.id.chip8h, R.id.chip1d)
-                val offset = 12
-
-                val labelX = if (showRight) {
-                    relativeX + offset
-                } else {
-                    relativeX - labelWidth - offset
-                }
-
-                labelContainer.translationX = labelX.toFloat()
-                labelContainer.translationY = 12f
-            }
-
+        // Show vertical line
+        binding.chartHighlightLine.apply {
+            visibility = View.VISIBLE
+            translationX = relativeX.toFloat()
         }
 
+        // Get chip-specific data
+        val chipInfo = chipInfoList.find { it.chipId == checkedId } ?: return
+        binding.tvDate.text = chipInfo.date
+        binding.tvPrice.text = chipInfo.price
+        binding.chartLabelContainer.visibility = View.VISIBLE
+
+        binding.chartLabelContainer.post {
+            val labelWidth = binding.chartLabelContainer.width
+            val showRight = checkedId in listOf(R.id.chip1h, R.id.chip8h, R.id.chip1d)
+            val offset = 12
+
+            val labelX = if (showRight) {
+                relativeX + offset
+            } else {
+                relativeX - labelWidth - offset
+            }
+
+            binding.chartLabelContainer.translationX = labelX.toFloat()
+            binding.chartLabelContainer.translationY = 12f
+        }
     }
+
 
     private fun handleSelectionChange(selection: String) {
         when (selection) {
