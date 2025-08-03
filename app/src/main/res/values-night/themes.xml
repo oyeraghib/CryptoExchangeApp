@@ -11,6 +11,7 @@
         <item name="ivIconColor">@color/dark_icon_tint</item>
         <item name="cardBackgroundColor">@color/dark_card_bg</item>
         <item name="gradientBackground">@drawable/bg_gradient_analytics_card</item>
+        <item name="fabBgColor">@color/dark_text_primary</item>
     </style>
 
 </resources>

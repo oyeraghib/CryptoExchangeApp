@@ -6,4 +6,5 @@
     <attr name="ivIconColor" format="reference|color" />
     <attr name="cardBackgroundColor" format="reference|color" />
     <attr name="gradientBackground" format="reference" />
+    <attr name="fabBgColor" format="reference|color" />
 </resources>

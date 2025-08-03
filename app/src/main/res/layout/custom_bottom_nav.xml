@@ -59,7 +59,6 @@
             android:id="@+id/icExchange"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            app:tint="@color/white"
             android:src="@drawable/ic_exchange"
             />
 
@@ -89,7 +88,6 @@
             android:id="@+id/icRecord"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            app:tint="@color/white"
             android:src="@drawable/ic_record"
             />
 
@@ -119,7 +117,6 @@
             android:id="@+id/icWallet"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            app:tint="@color/white"
             android:src="@drawable/ic_wallet"
             />
 

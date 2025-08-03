@@ -102,7 +102,7 @@
         android:src="@drawable/ic_add"
         app:layout_constraintTop_toTopOf="@id/bottomNavContainer"
         app:tint="#222DEC"
-        android:backgroundTint="@android:color/white"
+        android:backgroundTint="?attr/fabBgColor"
         android:elevation="12dp"
         app:shapeAppearanceOverlay="@style/FabCircleShape"
         app:layout_constraintBottom_toBottomOf="parent"
