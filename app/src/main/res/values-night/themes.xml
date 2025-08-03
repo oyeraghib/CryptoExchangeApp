@@ -1,7 +1,16 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.CryptoExchangeApp" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+
+    <!-- Base Dark Theme -->
+    <style name="Base.Theme.CryptoExchangeApp" parent="Theme.Material3.DayNight.NoActionBar" />
+
+    <!-- App Dark Theme -->
+    <style name="Theme.CryptoExchangeApp" parent="Base.Theme.CryptoExchangeApp">
+        <item name="colorSurface">@color/dark_background</item>
+        <item name="textColorPrimary">@color/dark_text_primary</item>
+        <item name="textColorSecondary">@color/dark_text_secondary</item>
+        <item name="ivIconColor">@color/dark_icon_tint</item>
+        <item name="cardBackgroundColor">@color/dark_card_bg</item>
+        <item name="gradientBackground">@drawable/bg_gradient_analytics_card</item>
     </style>
+
 </resources>

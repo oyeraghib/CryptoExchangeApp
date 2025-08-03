@@ -1,13 +1,16 @@
 package com.cryptoexchange.app.ui.activity
 
+import android.content.Context
 import android.content.res.Resources
 import android.graphics.RenderEffect
 import android.graphics.Shader
 import android.os.Build
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.navigation.NavController
 import androidx.navigation.NavOptions
@@ -15,6 +18,7 @@ import androidx.navigation.fragment.NavHostFragment
 import com.cryptoexchange.app.R
 import com.cryptoexchange.app.databinding.ActivityMainBinding
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import androidx.core.content.edit
 
 class MainActivity : AppCompatActivity() {
 
@@ -25,7 +29,37 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
+
+        //setting up theme
+        val sharedPrefs = getSharedPreferences("settings", Context.MODE_PRIVATE)
+        val isDarkMode = sharedPrefs.getBoolean("dark_mode", true)
+        AppCompatDelegate.setDefaultNightMode(
+            if (isDarkMode) AppCompatDelegate.MODE_NIGHT_YES
+            else AppCompatDelegate.MODE_NIGHT_NO
+        )
+
         setContentView(binding.root)
+
+        val ivTheme = findViewById<ImageView>(R.id.ivTheme)
+
+        // Set icon based on theme
+        ivTheme.setImageResource(
+            if (isDarkMode) R.drawable.ic_light_mode
+            else R.drawable.ic_dark_mode
+        )
+
+        // Handle toggle
+        ivTheme.setOnClickListener {
+            val newDarkMode = !sharedPrefs.getBoolean("dark_mode", true)
+
+            sharedPrefs.edit { putBoolean("dark_mode", newDarkMode) }
+
+            // Trigger theme change
+            AppCompatDelegate.setDefaultNightMode(
+                if (newDarkMode) AppCompatDelegate.MODE_NIGHT_YES
+                else AppCompatDelegate.MODE_NIGHT_NO
+            )
+        }
 
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.nav_host_fragment) as NavHostFragment

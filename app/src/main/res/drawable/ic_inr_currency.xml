@@ -2,7 +2,8 @@
     android:width="20dp"
     android:height="20dp"
     android:viewportWidth="20"
-    android:viewportHeight="20">
+    android:viewportHeight="20"
+    android:tint="?attr/ivIconColor">
   <path
       android:pathData="M5.625,6.25H15.625"
       android:strokeLineJoin="round"

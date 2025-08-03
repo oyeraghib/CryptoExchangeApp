@@ -37,7 +37,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Analytics"
-            android:textColor="@color/white"
+            android:textColor="?attr/textColorPrimary"
             android:textSize="10sp" />
     </LinearLayout>
 
@@ -68,7 +68,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Exchange"
-            android:textColor="@color/white"
+            android:textColor="?attr/textColorPrimary"
             android:textSize="10sp"/>
     </LinearLayout>
 
@@ -98,7 +98,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Record"
-            android:textColor="@color/white"
+            android:textColor="?attr/textColorPrimary"
             android:textSize="10sp"/>
     </LinearLayout>
 
@@ -128,7 +128,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Wallet"
-            android:textColor="@color/white"
+            android:textColor="?attr/textColorPrimary"
             android:textSize="10sp"/>
     </LinearLayout>
 </LinearLayout>

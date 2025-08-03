@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="colorSurface" format="reference|color" />
+    <attr name="textColorPrimary" format="reference|color" />
+    <attr name="textColorSecondary" format="reference|color" />
+    <attr name="ivIconColor" format="reference|color" />
+    <attr name="cardBackgroundColor" format="reference|color" />
+    <attr name="gradientBackground" format="reference" />
+</resources>
