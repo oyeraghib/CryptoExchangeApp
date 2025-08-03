@@ -37,4 +37,12 @@
         android:id="@+id/exchangeCoinFragment"
         android:name="com.cryptoexchange.app.ui.fragments.exchange.ExchangeCoinFragment"
         android:label="ExchangeCoinFragment" />
+    <fragment
+        android:id="@+id/globalExchangeCoinFragment"
+        android:name="com.cryptoexchange.app.ui.fragments.exchange.ExchangeCoinFragment"
+        android:label="ExchangeCoinFragment"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right"/>
 </navigation>

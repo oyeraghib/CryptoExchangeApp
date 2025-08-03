@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootCustomBottomNav"
+    android:layout_width="match_parent"
+    android:layout_height="72dp"
+    android:background="@drawable/bg_bottom_nav_rounded"
+    android:orientation="horizontal"
+    android:paddingHorizontal="16dp"
+    android:paddingTop="8dp"
+    android:paddingBottom="12dp"
+    android:gravity="center"
+    android:weightSum="4">
+    
+    <!-- Analytics -->
+    <LinearLayout
+        android:id="@+id/navAnalytics"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="6dp"
+        android:background="@drawable/bg_tab_selector"
+        android:clickable="true"
+        android:focusable="true">
+
+        <ImageView
+            android:id="@+id/icAnalytics"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_analytics"
+            />
+
+        <TextView
+            android:id="@+id/tvAnalytics"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Analytics"
+            android:textColor="@color/white"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+    <!-- Repeat similarly for Exchange, Record, Wallet -->
+    <!-- Exchange -->
+    <LinearLayout
+        android:id="@+id/navExchange"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="6dp"
+        android:background="@drawable/bg_tab_selector"
+        android:clickable="true"
+        android:focusable="true">
+
+        <ImageView
+            android:id="@+id/icExchange"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            app:tint="@color/white"
+            android:src="@drawable/ic_exchange"
+            />
+
+        <TextView
+            android:id="@+id/tvExchange"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Exchange"
+            android:textColor="@color/white"
+            android:textSize="10sp"/>
+    </LinearLayout>
+
+    <!-- Record -->
+    <LinearLayout
+        android:id="@+id/navRecord"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="6dp"
+        android:background="@drawable/bg_tab_selector"
+        android:clickable="true"
+        android:focusable="true">
+
+        <ImageView
+            android:id="@+id/icRecord"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            app:tint="@color/white"
+            android:src="@drawable/ic_record"
+            />
+
+        <TextView
+            android:id="@+id/tvRecord"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Record"
+            android:textColor="@color/white"
+            android:textSize="10sp"/>
+    </LinearLayout>
+
+    <!-- Wallet -->
+    <LinearLayout
+        android:id="@+id/navWallet"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="6dp"
+        android:background="@drawable/bg_tab_selector"
+        android:clickable="true"
+        android:focusable="true">
+
+        <ImageView
+            android:id="@+id/icWallet"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            app:tint="@color/white"
+            android:src="@drawable/ic_wallet"
+            />
+
+        <TextView
+            android:id="@+id/tvWallet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wallet"
+            android:textColor="@color/white"
+            android:textSize="10sp"/>
+    </LinearLayout>
+</LinearLayout>

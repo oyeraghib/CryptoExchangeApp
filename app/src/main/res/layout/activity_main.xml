@@ -63,35 +63,33 @@
             app:tint="@android:color/white" />
     </LinearLayout>
 
+    <View
+        android:id="@+id/bottomGradient"
+        android:layout_width="0dp"
+        android:layout_height="140dp"
+        android:layout_marginBottom="0dp"
+        android:background="@drawable/blur"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
     <LinearLayout
         android:id="@+id/bottom_nav_container"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:orientation="horizontal"
-        android:background="@drawable/bg_bottom_nav"
         android:paddingHorizontal="12dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginStart="16dp"
         android:gravity="center"
         app:layout_constraintTop_toTopOf="@id/fab"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/fab">
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottom_nav"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@android:color/transparent"
-            app:menu="@menu/bottom_nav_menu"
-            app:itemIconTint="@drawable/bottom_nav_icon_selector"
-            app:itemTextColor="@drawable/bottom_nav_text_selector"
-            app:labelVisibilityMode="labeled"
-            app:itemIconSize="24dp"
-            android:paddingVertical="6dp"
-            app:itemTextAppearanceActive="@style/BottomNavText"
-            app:itemTextAppearanceInactive="@style/BottomNavText"/>
+        <include
+            android:id="@+id/customBottomNav"
+            layout="@layout/custom_bottom_nav"/>
 
     </LinearLayout>
 
@@ -103,6 +101,7 @@
         android:layout_marginEnd="16dp"
         android:contentDescription="Add"
         android:src="@drawable/ic_add"
+        app:tint="#222DEC"
         android:backgroundTint="@android:color/white"
         android:elevation="12dp"
         app:shapeAppearanceOverlay="@style/FabCircleShape"
