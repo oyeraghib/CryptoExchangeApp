@@ -47,7 +47,6 @@ Press the Run ▶️ button or use Shift + F10.
 
 
 ## 📸 Screenshots
-## 📸 Screenshots
 
 ### 📈 Analytics Screen
 <img src="https://github.com/user-attachments/assets/00ed7ba9-b20c-4041-bd91-c0539a23eeda" alt="Analytics Screen" width="300"/>
