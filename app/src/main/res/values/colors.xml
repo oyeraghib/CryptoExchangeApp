@@ -16,11 +16,13 @@
     <color name="dark_text_secondary">#BBBBBB</color>
     <color name="dark_icon_tint">#FFFFFF</color>
     <color name="dark_card_bg">#1A1A1A</color>
+    <color name="dark_bg_circle">#484848</color>
 
     <color name="light_background">#FFFFFF</color>
     <color name="light_text_primary">#000000</color>
     <color name="light_text_secondary">#666666</color>
     <color name="light_icon_tint">#000000</color>
     <color name="light_card_bg">#F5F5F5</color>
+    <color name="light_bg_circle">#E2D9D9</color>
 
 </resources>

@@ -12,6 +12,8 @@
         <item name="cardBackgroundColor">@color/dark_card_bg</item>
         <item name="gradientBackground">@drawable/bg_gradient_analytics_card</item>
         <item name="fabBgColor">@color/dark_text_primary</item>
+        <item name="bgCircle">@color/dark_bg_circle</item>
+
     </style>
 
 </resources>

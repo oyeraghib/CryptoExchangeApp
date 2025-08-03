@@ -7,4 +7,5 @@
     <attr name="cardBackgroundColor" format="reference|color" />
     <attr name="gradientBackground" format="reference" />
     <attr name="fabBgColor" format="reference|color" />
+    <attr name="bgCircle" format="reference|color" />
 </resources>
