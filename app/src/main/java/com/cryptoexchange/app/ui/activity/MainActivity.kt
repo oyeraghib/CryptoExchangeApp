@@ -6,6 +6,7 @@ import android.graphics.RenderEffect
 import android.graphics.Shader
 import android.os.Build
 import android.os.Bundle
+import android.view.HapticFeedbackConstants
 import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
@@ -97,6 +98,11 @@ class MainActivity : AppCompatActivity() {
         }
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
+            this@MainActivity.window.decorView.performHapticFeedback(
+                HapticFeedbackConstants.CONTEXT_CLICK,
+                HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING
+            )
+
             val fab = findViewById<FloatingActionButton>(R.id.fab)
             val bottomNavContainer = findViewById<LinearLayout>(R.id.bottomNavContainer)
             val topBar = findViewById<LinearLayout>(R.id.topBar)
