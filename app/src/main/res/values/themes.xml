@@ -13,6 +13,7 @@
         <item name="gradientBackground">@drawable/bg_gradient_analytics_card_light</item>
         <item name="fabBgColor">@color/light_background</item>
         <item name="bgCircle">@color/light_bg_circle</item>
+        <item name="bg_button_circle">@drawable/bg_button_circle_light</item>
     </style>
 
 </resources>

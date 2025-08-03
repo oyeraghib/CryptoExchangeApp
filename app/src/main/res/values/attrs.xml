@@ -8,4 +8,5 @@
     <attr name="gradientBackground" format="reference" />
     <attr name="fabBgColor" format="reference|color" />
     <attr name="bgCircle" format="reference|color" />
+    <attr name="bg_button_circle" format="reference" />
 </resources>
