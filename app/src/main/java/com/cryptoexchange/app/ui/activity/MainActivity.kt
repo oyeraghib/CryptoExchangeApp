@@ -43,6 +43,7 @@ class MainActivity : AppCompatActivity() {
                 navController.navigate(destinationId)
             }
 
+            //fab on press
             binding.fab.setOnClickListener {
                 val options = NavOptions.Builder()
                     .setEnterAnim(R.anim.slide_in_right)
@@ -60,6 +61,7 @@ class MainActivity : AppCompatActivity() {
             val bottomNavContainer = findViewById<LinearLayout>(R.id.bottomNavContainer)
             val topBar = findViewById<LinearLayout>(R.id.topBar)
 
+            //setting the bg color of selected tab
             tabViews.forEach { (view, destId) ->
                 view.setBackgroundResource(R.drawable.bg_tab_selector)
                 view.isSelected = (destination.id == destId)
@@ -95,16 +97,13 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+        //todo: used for gradient blur but currently we are using png directly as it gives better effect
+        /*if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             val blurView = findViewById<View>(R.id.bottomGradient)
             val blurEffect = RenderEffect.createBlurEffect(20f, 20f, Shader.TileMode.CLAMP)
             blurView.setRenderEffect(blurEffect)
-        }
-
+        }*/
     }
-
-    val Int.dp: Int
-        get() = (this * Resources.getSystem().displayMetrics.density).toInt()
 
     override fun onDestroy() {
         super.onDestroy()
