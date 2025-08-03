@@ -5,17 +5,12 @@ import android.graphics.Shader
 import android.os.Build
 import android.os.Bundle
 import android.view.View
-import android.view.ViewGroup
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
-import androidx.navigation.findNavController
+import androidx.navigation.NavOptions
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.setupWithNavController
 import com.cryptoexchange.app.R
 import com.cryptoexchange.app.databinding.ActivityMainBinding
-import com.cryptoexchange.app.databinding.CustomBottomNavBinding
-import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
@@ -45,7 +40,14 @@ class MainActivity : AppCompatActivity() {
             }
 
             binding.fab.setOnClickListener {
-                navController.navigate(R.id.globalExchangeCoinFragment)
+                val options = NavOptions.Builder()
+                    .setEnterAnim(R.anim.slide_in_right)
+                    .setExitAnim(R.anim.slide_out_left)
+                    .setPopEnterAnim(R.anim.slide_in_left)
+                    .setPopExitAnim(R.anim.slide_out_right)
+                    .build()
+
+                navController.navigate(R.id.exchangeCoinFragment, null, options)
             }
         }
 
