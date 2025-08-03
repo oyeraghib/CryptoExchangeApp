@@ -4,7 +4,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginEnd="12dp"
-    android:backgroundTint="@color/black"
+    android:backgroundTint="?attr/cardBackgroundColor"
     app:cardCornerRadius="16dp"
     app:cardElevation="4dp">
 
@@ -35,7 +35,7 @@
                 android:layout_marginStart="12dp"
                 android:layout_weight="1"
                 android:text="Bitcoin (BTC)"
-                android:textColor="@android:color/white"
+                android:textColor="?attr/textColorPrimary"
                 android:textSize="14sp"
                 android:fontFamily="@font/font_giest_mono_regular"/>
         </LinearLayout>
@@ -53,7 +53,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="₹ 75,62,502.14"
-                android:textColor="@android:color/white"
+                android:textColor="?attr/textColorPrimary"
                 android:textSize="16sp"
                 android:fontFamily="@font/font_inter_medium" />
 
