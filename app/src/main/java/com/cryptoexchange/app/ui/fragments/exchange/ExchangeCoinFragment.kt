@@ -11,6 +11,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.cryptoexchange.app.R
 import com.cryptoexchange.app.data.CoinInfo
 import com.cryptoexchange.app.data.coinMap
@@ -82,6 +83,11 @@ class ExchangeCoinFragment : Fragment() {
                     setCardData(bottomCardBinding, it)
                 }
             }
+        }
+
+        //back press
+        binding.ivBack.setOnClickListener {
+            findNavController().popBackStack()
         }
     }
 
