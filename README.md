@@ -47,9 +47,17 @@ Press the Run ▶️ button or use Shift + F10.
 
 
 ## 📸 Screenshots
-![WhatsApp Image 2025-08-03 at 22 58 18](https://github.com/user-attachments/assets/00ed7ba9-b20c-4041-bd91-c0539a23eeda)
-![WhatsApp Image 2025-08-03 at 22 58 17](https://github.com/user-attachments/assets/7b0cc712-d151-4b0d-bb38-d610cdbbc4f1)
-![WhatsApp Image 2025-08-03 at 22 58 17 (1)](https://github.com/user-attachments/assets/cb6ad9f8-3e79-47d8-80e6-745c2e4c4cbf)
+## 📸 Screenshots
+
+### 📈 Analytics Screen
+<img src="https://github.com/user-attachments/assets/00ed7ba9-b20c-4041-bd91-c0539a23eeda" alt="Analytics Screen" width="300"/>
+
+### 📊 Portfolio View
+<img src="https://github.com/user-attachments/assets/7b0cc712-d151-4b0d-bb38-d610cdbbc4f1" alt="Portfolio Screen" width="300"/>
+
+### 🔁 Exchange Screen
+<img src="https://github.com/user-attachments/assets/cb6ad9f8-3e79-47d8-80e6-745c2e4c4cbf" alt="Exchange Screen" width="300"/>
+
 
 
 ## Limitations
