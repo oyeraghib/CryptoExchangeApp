@@ -126,6 +126,8 @@ class AnalyticsFragment : Fragment() {
         binding.chartLabelContainer.visibility = View.VISIBLE
 
         binding.chartLabelContainer.post {
+            if (!isAdded) return@post
+
             val labelWidth = binding.chartLabelContainer.width
             val showRight = checkedId in listOf(R.id.chip1h, R.id.chip8h, R.id.chip1d)
             val offset = 12
