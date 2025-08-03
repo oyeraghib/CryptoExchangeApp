@@ -40,6 +40,12 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(binding.root)
 
+        if (isDarkMode) {
+            binding.bottomGradient.visibility = View.VISIBLE
+        } else {
+            binding.bottomGradient.visibility = View.GONE
+        }
+
         val ivTheme = findViewById<ImageView>(R.id.ivTheme)
 
         // Set icon based on theme
