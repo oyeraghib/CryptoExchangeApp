@@ -55,11 +55,15 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-
         navController.addOnDestinationChangedListener { _, destination, _ ->
             val fab = findViewById<FloatingActionButton>(R.id.fab)
             val bottomNavContainer = findViewById<LinearLayout>(R.id.bottomNavContainer)
             val topBar = findViewById<LinearLayout>(R.id.topBar)
+
+            tabViews.forEach { (view, destId) ->
+                view.setBackgroundResource(R.drawable.bg_tab_selector)
+                view.isSelected = (destination.id == destId)
+            }
 
             when (destination.id) {
                 R.id.analyticsFragment -> {
@@ -84,8 +88,8 @@ class MainActivity : AppCompatActivity() {
                     topBar.visibility = View.VISIBLE
 
                     val params = bottomNavContainer.layoutParams as ConstraintLayout.LayoutParams
-                    params.endToEnd = ConstraintLayout.LayoutParams.PARENT_ID
                     params.endToStart = ConstraintLayout.LayoutParams.UNSET
+                    params.endToEnd = ConstraintLayout.LayoutParams.PARENT_ID
                     bottomNavContainer.layoutParams = params
                 }
             }
